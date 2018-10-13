@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php include_once 'view/dependencias.php'; ?>
+		<?php include_once 'view/dependencias.php';?>
 	</head>
 	<body>
 		<div class="container">
