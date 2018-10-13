@@ -15,7 +15,7 @@
 			</h5>
 			<div class="table-responsive">
 				<table class="table table-hover">
-					<thead>
+					<thead class="thead">
 						<tr>
 							<th>ID</th>
 							<th>NOME</th>
