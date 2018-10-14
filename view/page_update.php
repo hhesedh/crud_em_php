@@ -1,4 +1,11 @@
-<?php include_once 'dependencias.php'; ?>
+<?php 
+include_once '../model/Conexao.class.php';
+include_once '../model/Manager.class.php';
+include_once 'dependencias.php'; 
+
+$manager = new Manager();
+$id = $_POST['id'];
+?>
 <h2 class="text-center">
 	Page of Update <i class="fa fa-user-edit"></i>
 </h2><hr>
@@ -6,38 +13,41 @@
 <form method="POST" action="../controller/update_client.php">
 	<div class="container">
 		<div class="form-row">
-
+			<?php foreach ($manager->getInfo("registros", $id) as $client_info): ?>
+				
 			<div class="col-md-6">
 				Nome: <i class="fa fa-user"></i>
-				<input class="form-control" type="text" name="name" required autofocus><br>
+				<input class="form-control" type="text" name="name" required autofocus value="<?=$client_info['name']?>"><br>
 			</div>
 
 			<div class="col-md-6">
 				E-mail: <i class="fa fa-envelope"></i>
-				<input class="form-control" type="email" name="email" required><br>
+				<input class="form-control" type="email" name="email" required value="<?=$client_info['email']?>"><br>
 			</div>
 
 			<div class="col-md-4">
 				CPF: <i class="fa fa-address-card"></i>
-				<input class="form-control" type="text" name="cpf" id="cpf" required><br>
+				<input class="form-control" type="text" name="cpf" id="cpf" required value="<?=$client_info['cpf']?>"><br>
 			</div>
 
 			<div class="col-md-4">
 				Dt. de Nascimento: <i class="fa fa-calendar"></i>
-				<input class="form-control" type="date" name="birth" required><br>
+_info				<input class="form-control" type="date" name="birth" required value="<?=$client_info['birth']?>"><br>
 			</div>
 
 			<div class="col-md-4">
 				Telefone: <i class="fab fa-whatsapp"></i>
-				<input class="form-control" type="text" name="phone" id="phone" required><br>
+				<input class="form-control" type="text" name="phone" id="phone" required value="<?=$client_info['phone']?>"><br>
 			</div>
 
 			<div class="col-md-12">
 				Endereço: <i class="fa fa-map"></i>
-				<input class="form-control" type="text" name="address" required><br>
+				<input class="form-control" type="text" name="address" required value="<?=$client_info['address']?>"><br>
 			</div>
 
 			<div class="col-md-4">
+		<?php endforeach ?>
+				<input type="hidden" name="id" value="<?=$client_info['id']?>">
 				<button class="btn btn-warning btn-lg">
 					Update Client <i class="fa fa-user-edit"></i>
 				</button><br><br>

@@ -33,4 +33,14 @@ class Manager extends Conexao
     	$statement->bindValue(":id", $id);
     	$statement->execute();
     }
+
+    public function getInfo($table, $id) {
+    	$pdo = parent::get_instance();
+    	$sql = "SELECT * FROM $table WHERE id = :id";
+    	$statement = $pdo->prepare($sql);
+    	$statement->bindValue(":id", $id);
+    	$statement->execute();
+
+    	return $statement->fetchAll();
+    }
 }
