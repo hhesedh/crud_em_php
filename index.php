@@ -1,4 +1,4 @@
-<?php 
+<?php
 include_once 'model/Conexao.class.php';
 include_once 'model/Manager.class.php';
 
@@ -8,7 +8,7 @@ $manager = new Manager();
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php include_once 'view/dependencias.php'; ?>
+		<?php include_once 'view/dependencias.php';?>
 	</head>
 	<body>
 		<div class="container">
@@ -34,7 +34,7 @@ $manager = new Manager();
 							<th colspan="3">AÇÕES</th>
 						</tr>
 					</thead>
-						<?php foreach($manager->listClient("registros") as $client): ?>
+						<?php foreach ($manager->listClient("registros") as $client): ?>
 						<tr>
 							<td><?php echo $client['id']; ?></td>
 							<td><?php echo $client['name']; ?></td>
@@ -44,7 +44,8 @@ $manager = new Manager();
 							<td><?php echo $client['address']; ?></td>
 							<td><?php echo $client['phone']; ?></td>
 							<td>
-								<form method="POST">
+								<form method="POST" action="view/page_update.php">
+									<input type="hidden" name="id" value="<?=$client['id']?>">
 									<button class="btn btn-warning  btn-xs">
 									<i class="fa fa-user-edit"></i>
 									</button>
@@ -59,7 +60,7 @@ $manager = new Manager();
 								</form>
 							</td>
 						</tr>
-					<?php endforeach; ?>
+					<?php endforeach;?>
 					</tbody>
 				</table>
 			</div>
