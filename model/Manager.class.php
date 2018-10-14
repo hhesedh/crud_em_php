@@ -17,12 +17,20 @@ class Manager extends Conexao
 
     }
 
-    function listClient($table) {
+    public function listClient($table) {
     	$pdo = parent::get_instance();
     	$sql = "SELECT * FROM $table ORDER BY name ASC";
     	$statement = $pdo->query($sql);
     	$statement->execute();
 
     	return $statement->fetchAll();
+    }
+
+    public function  deleteClient($table, $id) {
+    	$pdo = parent::get_instance();
+    	$sql = "DELETE FROM $table WHERE id = :id";
+    	$statement = $pdo->prepare($sql);
+    	$statement->bindValue(":id", $id);
+    	$statement->execute();
     }
 }
