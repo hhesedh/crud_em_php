@@ -1,4 +1,4 @@
-<?php include_once 'dependencias.php';?>
+<?php include_once 'dependencias.php'; ?>
 <h2 class="text-center">
 	Page of Register <i class="fa fa-user-plus"></i>
 </h2><hr>
@@ -14,7 +14,7 @@
 
 			<div class="col-md-6">
 				E-mail: <i class="fa fa-envelope"></i>
-				<input class="form-control" type="email" name="e-mail" required><br>
+				<input class="form-control" type="email" name="email" required><br>
 			</div>
 
 			<div class="col-md-4">
