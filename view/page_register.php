@@ -1,4 +1,4 @@
-<?php include_once 'dependencias.php'; ?>
+<?php include_once 'dependencias.php';?>
 <h2 class="text-center">
 	Page of Register <i class="fa fa-user-plus"></i>
 </h2><hr>
@@ -53,7 +53,7 @@
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script> 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function(){

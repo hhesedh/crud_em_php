@@ -1,10 +1,10 @@
-<?php 
+<?php
 include_once '../model/Conexao.class.php';
 include_once '../model/Manager.class.php';
-include_once 'dependencias.php'; 
+include_once 'dependencias.php';
 
 $manager = new Manager();
-$id = $_POST['id'];
+$id      = $_POST['id'];
 ?>
 <h2 class="text-center">
 	Page of Update <i class="fa fa-user-edit"></i>
@@ -14,7 +14,7 @@ $id = $_POST['id'];
 	<div class="container">
 		<div class="form-row">
 			<?php foreach ($manager->getInfo("registros", $id) as $client_info): ?>
-				
+
 			<div class="col-md-6">
 				Nome: <i class="fa fa-user"></i>
 				<input class="form-control" type="text" name="name" required autofocus value="<?=$client_info['name']?>"><br>
@@ -32,7 +32,7 @@ $id = $_POST['id'];
 
 			<div class="col-md-4">
 				Dt. de Nascimento: <i class="fa fa-calendar"></i>
-_info				<input class="form-control" type="date" name="birth" required value="<?=$client_info['birth']?>"><br>
+				<input class="form-control" type="date" name="birth" required value="<?=$client_info['birth']?>"><br>
 			</div>
 
 			<div class="col-md-4">
@@ -46,7 +46,7 @@ _info				<input class="form-control" type="date" name="birth" required value="<?
 			</div>
 
 			<div class="col-md-4">
-		<?php endforeach ?>
+		<?php endforeach?>
 				<input type="hidden" name="id" value="<?=$client_info['id']?>">
 				<button class="btn btn-warning btn-lg">
 					Update Client <i class="fa fa-user-edit"></i>
@@ -63,7 +63,7 @@ _info				<input class="form-control" type="date" name="birth" required value="<?
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script> 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function(){
