@@ -67,7 +67,7 @@ $manager = new Manager();
 	<script type="text/javascript" src="js/funcoes.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			removeLinha();
+			$(removeLinha());
 		})
 	</script>
  </body>

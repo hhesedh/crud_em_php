@@ -60,11 +60,12 @@ $id      = $_POST['id'];
 	</div>
 </form>
 
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery.mask.min.js"></script>
+<script type="text/javascript" src="../js/funcoes.js"></script>
 
-<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="js/funcoes.js"></script>
 <script type="text/javascript">
-	$(funtion() {
+	$(document).ready(function(){
 		produzMascaras();
 	})
 </script>
