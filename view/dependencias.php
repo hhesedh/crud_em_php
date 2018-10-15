@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
 
 <!-- Titulo e Icone - HEAD -->
-<title>CRUD - Udemy</title>
+<title>CRUD - Lista</title>
 
 <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
 
@@ -42,6 +42,6 @@ h2 {
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script> 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 
 -->

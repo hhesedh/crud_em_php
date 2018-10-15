@@ -1,9 +1,7 @@
 <?php
 include_once 'model/Conexao.class.php';
 include_once 'model/Manager.class.php';
-
 $manager = new Manager();
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,36 +32,43 @@ $manager = new Manager();
 							<th colspan="3">AÇÕES</th>
 						</tr>
 					</thead>
-						<?php foreach ($manager->listClient("registros") as $client): ?>
-						<tr>
-							<td><?php echo $client['id']; ?></td>
-							<td><?php echo $client['name']; ?></td>
-							<td><?php echo $client['email']; ?></td>
-							<td><?php echo $client['cpf']; ?></td>
-							<td><?php echo date("d/m/Y", strtotime($client['birth'])); ?></td>
-							<td><?php echo $client['address']; ?></td>
-							<td><?php echo $client['phone']; ?></td>
-							<td>
-								<form method="POST" action="view/page_update.php">
-									<input type="hidden" name="id" value="<?=$client['id']?>">
-									<button class="btn btn-warning  btn-xs">
-									<i class="fa fa-user-edit"></i>
-									</button>
-								</form>
-							</td>
-							<td>
-								<form method="POST" action="controller/delete_client.php" onclick="return confirm('Você tem certeza que deseja excluir?');">
-									<button class="btn btn-danger btn-xs">
-										<input type="hidden" name="id" value="<?=$client['id']?>">
-										<i class="fa fa-trash"></i>
-									</button>
-								</form>
-							</td>
-						</tr>
+					<?php foreach ($manager->listClient("registros") as $client): ?>
+					<tr>
+						<td><?php echo $client['id']; ?></td>
+						<td><?php echo $client['name']; ?></td>
+						<td><?php echo $client['email']; ?></td>
+						<td><?php echo $client['cpf']; ?></td>
+						<td><?php echo date("d/m/Y", strtotime($client['birth'])); ?></td>
+						<td><?php echo $client['address']; ?></td>
+						<td><?php echo $client['phone']; ?></td>
+						<td>
+							<form method="POST" action="view/page_update.php">
+								<input type="hidden" name="id" value="<?=$client['id']?>">
+								<button class="btn btn-warning  btn-xs">
+								<i class="fa fa-user-edit"></i>
+								</button>
+							</form>
+						</td>
+						<td>
+							<form method="POST" action="controller/delete_client.php" class="button_delete">
+								<button class="btn btn-danger btn-xs">
+								<input type="hidden" name="id" value="<?=$client['id']?>">
+								<i class="fa fa-trash"></i>
+								</button>
+							</form>
+						</td>
+					</tr>
 					<?php endforeach;?>
-					</tbody>
-				</table>
-			</div>
+				</tbody>
+			</table>
 		</div>
-	</body>
+	</div>
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/funcoes.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			removeLinha();
+		})
+	</script>
+ </body>
 </html>
